@@ -1,0 +1,17 @@
+{
+  "name": "morning-info-purge",
+  "version": "1.0.0",
+  "description": "Site d'informations MORNING INFO PURGE",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.19.2",
+    "mongoose": "^8.3.0",
+    "multer": "^1.4.5"
+  }
+}
