@@ -1,0 +1,14 @@
+<!-- views/upload.ejs -->
+<%- include("partials/header") %>
+
+<div class="container">
+  <h2>Nouvelle publication</h2>
+  <form action="/post/upload" method="POST" enctype="multipart/form-data">
+    <input type="text" name="clanName" placeholder="Nom du clan" required>
+    <textarea name="text" placeholder="Votre texte..." rows="4" required></textarea>
+    <input type="file" name="image">
+    <button type="submit">Publier</button>
+  </form>
+</div>
+
+<%- include("partials/footer") %>
