@@ -1,0 +1,14 @@
+<!-- views/register.ejs -->
+<%- include("partials/header") %>
+
+<div class="container">
+  <h2>Inscription Clan</h2>
+  <form action="/auth/register" method="POST">
+    <input type="text" name="clanName" placeholder="Nom du clan" required>
+    <input type="text" name="leaderName" placeholder="Nom du chef" required>
+    <input type="text" name="slogan" placeholder="Slogan du clan" required>
+    <button type="submit">S'inscrire</button>
+  </form>
+</div>
+
+<%- include("partials/footer") %>
