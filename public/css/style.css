@@ -1,0 +1,65 @@
+
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+}
+
+header, footer {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 1em;
+  text-align: center;
+}
+
+a {
+  color: #ffd700;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 800px;
+  margin: 2em auto;
+  padding: 1em;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+input, textarea, button {
+  width: 100%;
+  padding: 0.75em;
+  margin: 0.5em 0;
+  border: none;
+  border-radius: 4px;
+}
+
+button {
+  background: #ffd700;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ffcc00;
+}
+
+.post {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding: 1em 0;
+}
+
+.like-btn {
+  background: #333;
+  color: #fff;
+  padding: 0.5em;
+  border-radius: 4px;
+}
+
+.comment-section {
+  margin-top: 1em;
+  background: rgba(0,0,0,0.3);
+  padding: 1em;
+  border-radius: 6px;
+}
