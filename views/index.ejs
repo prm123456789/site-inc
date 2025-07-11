@@ -1,0 +1,45 @@
+<!-- views/index.ejs -->
+<%- include("partials/header") %>
+
+<div class="container">
+  <h1>MORNING INFO PURGE</h1>
+  <p><em>⚜️ #sans mwa la purge serait morte... ⚜️</em></p>
+
+  <a href="/auth/register"><button>S'inscrire (Clan)</button></a>
+  <a href="/post/upload"><button>Nouvelle publication</button></a>
+  <a href="https://chat.whatsapp.com/CDNP2E9SRNq5P6XR7PkTrS?mode=ac_c" target="_blank">
+    <button>Rejoindre le journal WhatsApp</button>
+  </a>
+  <a href="https://whatsapp.com/channel/0029Vb6T8td5K3zQZbsKEU1R" target="_blank">
+    <button>Channel Tech</button>
+  </a>
+
+  <% posts.forEach(post => { %>
+    <div class="post">
+      <h3><%= post.clanName %></h3>
+      <p><%= post.text %></p>
+      <% if (post.image) { %>
+        <img src="/uploads/<%= post.image %>" alt="Image" style="max-width:100%;">
+      <% } %>
+      <p>
+        <button class="like-btn" onclick="likePost('<%= post._id %>')">❤️ J'aime</button>
+        <span id="like-count-<%= post._id %>"><%= post.likes.length %></span> likes
+      </p>
+      <form method="POST" action="/post/<%= post._id %>/comment">
+        <input type="text" name="comment" placeholder="Ajouter un commentaire..." required>
+        <button type="submit">Commenter</button>
+      </form>
+      <div class="comment-section">
+        <% post.comments.forEach(c => { %>
+          <p>
+            <strong><%= c.author %></strong>: <%= c.text %>
+            <button onclick="deleteComment('<%= post._id %>','<%= c._id %>')">🗑️</button>
+          </p>
+        <% }) %>
+      </div>
+      <button onclick="deletePost('<%= post._id %>')">🗑️ Supprimer publication</button>
+    </div>
+  <% }) %>
+</div>
+
+<%- include("partials/footer") %>
